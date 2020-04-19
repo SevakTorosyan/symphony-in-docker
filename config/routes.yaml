@@ -1,3 +1,185 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+# Сериалы
+GetSerials:
+  path:       /getSerials
+  controller: App\Controller\SerialsController::GetSerials
+  methods:    GET
+
+GetSerial:
+  path:       /getSerial/{id?}
+  controller: App\Controller\SerialsController::GetSerial
+  methods:    GET
+  defaults:
+    id: 4f6cf35x-2c4y-483z-a0a9-158621f77a21
+
+PostSerial:
+  path:       /postSerial
+  controller: App\Controller\SerialsController::PostSerial
+  methods:    POST
+
+PutSerial:
+  path:       /putSerial/{id}
+  controller: App\Controller\SerialsController::PutSerial
+  methods:    PUT
+  defaults:
+    id: 4f6cf35x-2c4y-483z-a0a9-158621f77a21
+
+DeleteSerial:
+  path:       /deleteSerial/{id}
+  controller: App\Controller\SerialsController::DeleteSerial
+  methods:    DELETE
+  defaults:
+    id: 4f6cf35x-2c4y-483z-a0a9-158621f77a21
+
+IndexSerial:
+  path:       /indexSerial
+  controller: App\Controller\SerialsController::indexSerial
+  methods:    GET
+#Сезоны
+GetSeasons:
+  path:       /getSeasons/{serialID}
+  controller: App\Controller\SeasonsController::GetSeasons
+  methods:    GET
+  defaults:
+    serialID: 4f6cf35x-2c4y-483z-a0a9-158621f77a21
+
+GetSeason:
+  path:       /getSeason/{id}
+  controller: App\Controller\SeasonsController::GetSeason
+  methods:    GET
+  defaults:
+    id: 126cf35x-2c4y-483z-a0a9-158621f77a21
+
+PostSeason:
+  path:       /postSeason
+  controller: App\Controller\SeasonsController::PostSeason
+  methods:    POST
+
+PutSeason:
+  path:       /putSeason/{id}
+  controller: App\Controller\SeasonsController::PutSeason
+  methods:    PUT
+  defaults:
+    id: 126cf35x-2c4y-483z-a0a9-158621f77a21
+
+DeleteSeason:
+  path:       /deleteSeason/{id}
+  controller: App\Controller\SeasonsController::deleteSeason
+  methods:    DELETE
+  defaults:
+    id: 126cf35x-2c4y-483z-a0a9-158621f77a21
+IndexSeason:
+  path:       /indexSeason
+  controller: App\Controller\SeasonsController::indexSeason
+  methods:    GET
+# Серии
+GetSeriesBySeasonId:
+  path:       /getSeriesBySeason/{seasonID}
+  controller: App\Controller\SeriesController::GetSeriesBySeasonId
+  methods:    GET
+  defaults:
+    seasonID: 126cf35x-2c4y-483z-a0a9-158621f77a21
+
+GetSeries:
+  path:       /getSeries/{id}
+  controller: App\Controller\SeriesController::GetSeries
+  methods:    GET
+  defaults:
+    id: 546cf35x-2c4y-483z-a0a9-158621f77a21
+
+PostSeries:
+  path:       /postSeries
+  controller: App\Controller\SeriesController::PostSeries
+  methods:    POST
+
+PutSeries:
+  path:       /putSeries/{id}
+  controller: App\Controller\SeriesController::PutSeries
+  methods:    PUT
+  defaults:
+    id: 546cf35x-2c4y-483z-a0a9-158621f77a21
+
+DeleteSeries:
+  path:       /deleteSeries/{id}
+  controller: App\Controller\SeriesController::deleteSeries
+  methods:    DELETE
+  defaults:
+    id: 546cf35x-2c4y-483z-a0a9-158621f77a21
+IndexSeries:
+  path:       /indexSeries
+  controller: App\Controller\SeriesController::indexSeries
+  methods:    GET
+# Планы подписок
+GetPlans:
+  path:       /getPlans
+  controller: App\Controller\PlansController::GetPlans
+  methods:    GET
+
+GetPlan:
+  path:       /getPlan/{id}
+  controller: App\Controller\PlansController::GetPlan
+  methods:    GET
+  defaults:
+    id: 999cf35x-2c4y-483z-a0a9-158621f77a21
+
+PostPLan:
+  path:       /postPlan
+  controller: App\Controller\PlansController::PostPlan
+  methods:    POST
+
+PatchPlan:
+  path:       /patchPlan/{id}
+  controller: App\Controller\PlansController::PatchPlan
+  methods:    PATCH
+  defaults:
+    id: 999cf35x-2c4y-483z-a0a9-158621f77a21
+
+DeletePlan:
+  path:       /deletePlan/{id}
+  controller: App\Controller\PlansController::DeletePlan
+  methods:    DELETE
+  defaults:
+    id: 999cf35x-2c4y-483z-a0a9-158621f77a21
+
+IndexPlan:
+    path:       /indexPlan
+    controller: App\Controller\PlansController::indexPlan
+    methods:    GET
+# Пользователи
+GetUsers:
+  path:       /getUsers
+  controller: App\Controller\UsersController::GetUsers
+  methods:    GET
+
+GetUser:
+  path:       /getUser/{id}
+  controller: App\Controller\UsersController::GetUsero
+  methods:    GET
+  defaults:
+    id: 111cf35x-2c4y-483z-a0a9-158621f77a21
+
+PostUser:
+  path:       /postUser
+  controller: App\Controller\UsersController::PostUser
+  methods:    POST
+
+PutUser:
+  path:       /putUser/{id}
+  controller: App\Controller\UsersController::PutUser
+  methods:    PUT
+  defaults:
+    id: 111cf35x-2c4y-483z-a0a9-158621f77a21
+
+DeleteUser:
+  path:       /deleteUser/{id}
+  controller: App\Controller\UsersController::DeleteUser
+  methods:    DELETE
+  defaults:
+    id: 111cf35x-2c4y-483z-a0a9-158621f77a21
+
+IndexUser:
+  path:       /indexUser
+  controller: App\Controller\UsersController::indexUser
+  methods:    GET

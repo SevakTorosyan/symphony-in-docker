@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Сериалы{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 border border-primary">
+            <div class="row">
+                <h1>Добавление</h1>
+                <form method="post" action="/postSerial">
+                    <div class="col-10">
+                        <label for="name">Введите название сериала</label>
+                        <input type="text" name="name" id="name" class="form-control-sm">
+                    </div>
+                    <div class="col-10">
+                        <label for="description">Введите описание сериала</label>
+                        <input type="text" name="description" id="description" class="form-control-sm">
+                    </div>
+                    <div class="col-10">
+                        <label for="dayCount">Введите количество сезонов</label>
+                        <input type="number" name="seasonCount" id="dayCount" class="form-control-sm">
+                    </div>
+                    <div class="col-10">
+                        <label for="price">Введите название логотипа сериала</label>
+                        <input type="text" name="logo" id="price" class="form-control-sm">
+                    </div>
+                    <div class="col-10">
+                        <label for="price">Введите жанр сериала</label><br>
+                        <input type="text" name="genre" id="price" class="form-control-sm">
+                    </div>
+                    <div class="col-10"><input type="submit" class="btn btn-primary mt-3" value="Добавить"></div>
+                </form>
+            </div>
+        </div>
+        <div class="col-4 border border-warning">
+            <h1>Изменение</h1>
+            <form method="post" action="/putSerial" id="change">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="col-10">
+                    <label for="id">Введите ID сериала</label><br>
+                    <input type="text" name="id" id="changeId" class="form-control-sm">
+                </div>
+                <div class="col-10">
+                    <label for="name">Введите название сериала</label>
+                    <input type="text" name="name" id="name" class="form-control-sm">
+                </div>
+                <div class="col-10">
+                    <label for="description">Введите описание сериала</label>
+                    <input type="text" name="description" id="description" class="form-control-sm">
+                </div>
+                <div class="col-10">
+                    <label for="dayCount">Введите количество сезонов</label>
+                    <input type="number" name="seasonCount" id="dayCount" class="form-control-sm">
+                </div>
+                <div class="col-10">
+                    <label for="price">Введите название логотипа сериала</label>
+                    <input type="text" name="logo" id="price" class="form-control-sm">
+                </div>
+                <div class="col-10">
+                    <label for="price">Введите жанр сериала</label>
+                    <input type="text" name="genre" id="price" class="form-control-sm">
+                </div>
+                <div class="col-10"><input type="submit" class="btn btn-warning mt-3" value="Изменить"></div>
+            </form>
+        </div>
+        <div class="col-4 border border-danger">
+            <h1>Удаление</h1>
+            <form method="post" action="/deleteSerial" id="delete">
+                <input type="hidden" name="_method" value="DELETE">
+                <div class="col-7">
+                    <label for="id">Введите ID сериала</label>
+                    <input type="text" name="id" id="deleteId" class="form-control-sm">
+                </div>
+                <div class="col-7"><input type="submit" class="btn btn-danger mt-3" value="Удалить"></div>
+            </form>
+        </div>
+    </div>
+</div>
+{% include 'footer.html.twig' %}
+<script>
+    $('#changeId').change(function(event){
+        $('#change').attr('action','/putSerial/'+ event.target.value);
+    });
+
+    $('#deleteId').change(function(event){
+        $('#delete').attr('action','/deleteSerial/'+ event.target.value);
+    });
+
+</script>
+</body>
+</html>

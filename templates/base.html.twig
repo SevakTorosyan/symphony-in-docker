@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <form method="post" action="/postPlan">
+
+        <input type="text" name="name">
+        <input type="submit">
+    </form>
+    </body>
+</html>
